@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8DE1B6E-2E22-4D41-A0F5-D39DB95ED115}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bau.Libraries.LibExpressionParser</RootNamespace>
+    <AssemblyName>LibExpressionParser</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Compiler.cs" />
+    <Compile Include="CompilerProperties.cs" />
+    <Compile Include="Errors\CompilerError.cs" />
+    <Compile Include="Errors\CompilerErrorsCollection.cs" />
+    <Compile Include="Parser\Evaluator\ExpressionCompute.cs" />
+    <Compile Include="Parser\Evaluator\ExpressionConversorRpn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Parser\Evaluator\ExpressionValidator.cs" />
+    <Compile Include="Parser\Lexical\ParserHelper.cs" />
+    <Compile Include="Variables\ValueBase.cs" />
+    <Compile Include="Variables\ValueNumeric.cs" />
+    <Compile Include="Variables\ValueString.cs" />
+    <Compile Include="Parser\Expressions\ExpressionBase.cs" />
+    <Compile Include="Parser\Expressions\ExpressionsCollection.cs" />
+    <Compile Include="Parser\Expressions\ExpressionIdentifier.cs" />
+    <Compile Include="Parser\Lexical\ParserManager.cs" />
+    <Compile Include="Parser\Lexical\StringTokenizer.cs" />
+    <Compile Include="Parser\Lexical\StringWord.cs" />
+    <Compile Include="Variables\Variable.cs" />
+    <Compile Include="Variables\VariablesCollection.cs" />
+    <Compile Include="Parser\Tokens\Token.cs" />
+    <Compile Include="Parser\Tokens\TokensCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
